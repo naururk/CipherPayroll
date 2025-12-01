@@ -6,7 +6,7 @@ import {
   createInstance,
   SepoliaConfig,
   generateKeypair as sdkGenerateKeypair,
-} from "https://cdn.zama.ai/relayer-sdk-js/0.2.0/relayer-sdk-js.js";
+} from "https://cdn.zama.ai/relayer-sdk-js/0.3.0-5/relayer-sdk-js.js";
 
 let _relayer = null;     // cached singleton SDK instance
 let _ud_kp   = null;     // cached keypair for userDecrypt
@@ -23,8 +23,8 @@ export async function initRelayer() {
   _relayer = await createInstance({
     ...SepoliaConfig,                         // ready-to-use Sepolia configuration
     network: window.ethereum,
-    relayerUrl: "https://relayer.testnet.zama.cloud",
-    gatewayUrl: "https://gateway.sepolia.zama.ai/",
+    relayerUrl: "https://relayer.testnet.zama.org",
+    gatewayUrl: "https://gateway.sepolia.zama.org/",
     debug: true,
   });
 
